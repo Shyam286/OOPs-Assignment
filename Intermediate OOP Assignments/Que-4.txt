@@ -1,0 +1,21 @@
+4.1:______
+
+public class Assign {
+
+	public static void main(String[] args) {
+		
+	}
+}
+
+abstract class Thor{
+	abstract void power();
+}
+ class Get extends Thor{
+	 void power()
+	 {
+		 System.out.println("Lightning Power");
+	 }
+ }
+
+
+4.2:______

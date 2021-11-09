@@ -1,0 +1,32 @@
+package javaAssign;
+
+public class JavaOne {
+		public static void main(String[] args) {
+			Singleton st1=Singleton.get();
+			System.out.println(st1);
+			Singleton st2=Singleton.get();
+			System.out.println(st2);
+			
+		}
+
+}
+
+class Singleton{
+	static Singleton s=null;
+	private Singleton() {
+		
+	}
+	static Singleton get() {
+		if(s==null) {
+		 s=new Singleton();
+			return s;
+		}
+		else
+		{
+			return s;
+		}
+		
+	}
+	
+}
+

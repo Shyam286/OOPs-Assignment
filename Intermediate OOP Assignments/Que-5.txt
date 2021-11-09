@@ -1,0 +1,33 @@
+package com.javaassign;
+
+public class Assign {
+
+	public static void main(String[] args) {
+	 Line l=new Line();
+	 l.draw();
+	 Rectangle r=new Rectangle();
+	 r.draw();
+	 Cube c=new Cube();
+	 c.draw();
+		
+	}
+}
+abstract class Shapes{
+	abstract void draw();
+}
+ class Line extends Shapes{
+	void draw() {
+		System.out.println("line");
+	}
+}
+ class Rectangle extends Shapes{
+	 void draw() {
+		System.out.println("rectangle");
+	}
+ }
+ class Cube extends Shapes{
+	 void draw() {
+		System.out.println("circle");
+	}
+ }
+ 

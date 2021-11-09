@@ -1,0 +1,90 @@
+package com.javaassign;
+
+import java.util.Scanner;
+public class DessertShop {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("What is your role: 1.Owner 2.Customer");
+		int role=sc.nextInt();
+		if(role==1) {
+			AddStock ad=new AddStock();
+			ad.addStock();
+		}
+		else
+		{
+			Order o=new Order();
+			o.order();
+		}
+		
+	}
+
+}
+abstract class DessertItem{
+	abstract int getCost(int quant);
+}
+
+class Candy extends DessertItem{
+	int price=2;
+	int getCost(int quant){
+		return price*quant*60;
+	}
+}
+
+class Cookie extends DessertItem{
+	int price=5;
+	int getCost(int quant){
+		return price*quant*70;
+	}	
+}
+
+class IceCream extends DessertItem{
+	int price=30;
+	int getCost(int quant){
+		return price*quant;
+	}	
+}
+
+class AddStock{
+	static int stCandy;
+	static	int stCookie;
+	  static  int stIceCream;
+	void addStock(){
+		
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Add  stock of candy");
+		stCandy=sc.nextInt();
+		System.out.println("Add stock of Cookie");
+		stCookie=sc.nextInt();			
+		System.out.println("Add stock of IceCream");
+		stIceCream=sc.nextInt();
+	}
+}
+class Order{
+	
+  void order()
+	{	     
+		Scanner sc=new Scanner(System.in);
+		Candy c=new Candy();
+		Cookie ck=new Cookie();
+		IceCream i=new IceCream();
+		
+		System.out.println("Please give your order");
+		
+		System.out.println("Please Enter Candy Quantity");
+		int cntCanday=sc.nextInt();
+
+		
+		System.out.println("Please Enter Cookie Quantity");
+		int cntCookie=sc.nextInt();
+		
+		System.out.println("Please Enter IceCream Quantity");
+		int cntIceCream=sc.nextInt();
+		
+		int bill=c.getCost(cntCanday)+ck.getCost(cntCookie)+i.getCost(cntIceCream);
+		
+		System.out.println("Total Amount : Rs. "+bill);
+	}
+}
+

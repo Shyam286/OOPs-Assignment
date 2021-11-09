@@ -1,0 +1,53 @@
+package com.javaassign;
+
+
+
+public class BankApp {
+
+	static double totalBal=0;
+	 
+	public static void main(String[] args) {
+		Bank b=new SavingAccount(10000,6000);
+		totalBal=totalBal + totalCash(b);
+		
+		b=new CurrentAccount(25000,5000);
+		totalBal=totalBal+totalCash(b);
+		System.out.println("Total Cash in Bank :" +totalBal);
+	}
+    static double totalCash(Bank b) {
+	   return b.getBal();
+	   
+   }
+}
+class Bank{
+	public double balance;
+	
+	double getBal() {
+		return 0;
+	}
+		
+}
+class SavingAccount extends Bank{
+	double fd;
+	SavingAccount(double balance,double fd){
+		super.balance=balance+fd;
+	}
+	
+	double getBal() {
+		
+		return balance+fd;
+	}
+	
+}
+class CurrentAccount extends Bank{
+    double cCredit;
+    
+	CurrentAccount(double balance,double cCredit){
+		super.balance=balance-cCredit;
+	}
+	
+	double getBal() {
+		return balance;
+	}
+	
+}

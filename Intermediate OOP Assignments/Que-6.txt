@@ -1,0 +1,33 @@
+package Demo;
+
+public class Two {
+    public static void main(String[] args) {
+        Persistence persistence = new Persistence() {
+	            public void persist() {
+	                System.out.println("object created");
+	                System.out.println("persist method invoked");
+	            }
+	        };
+	        persistence.persist();
+	    }
+	}
+
+abstract class Persistence {
+    public abstract void persist();
+}
+
+
+ class FilePersistence extends Persistence{
+    public void persist()
+    {
+        System.out.println("Overiding in FIle persistence");
+    }
+}
+
+
+ class DatabasePersistence extends Persistence{
+    public void persist()
+    {
+        System.out.println("Overiding in FIle persistence");
+    }
+}
